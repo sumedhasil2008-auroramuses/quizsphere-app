@@ -1,0 +1,5 @@
+# Your local demo data (accounts, scores) — never upload it
+quizsphere_data.json
+# Python's own cache files
+__pycache__/
+*.pyc
