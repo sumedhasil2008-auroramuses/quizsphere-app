@@ -14,11 +14,26 @@ How it works:
   page you asked for. Each page lives in its own file inside the screens/ folder.
 """
 
-import math
-import tkinter as tk
-from tkinter import messagebox
+import sys
 
-import data
+# ---------------------------------------------------------------------------
+# Opened by Streamlit by mistake ("streamlit run main.py", or Main file path
+# set to main.py on Streamlit Cloud)? Websites can't show Tkinter windows,
+# so show the Streamlit web version (streamlit_app.py) instead of crashing.
+if "streamlit" in sys.modules:
+    import os
+    import runpy
+
+    import streamlit as st
+    runpy.run_path(os.path.join(os.path.dirname(os.path.abspath(__file__)), "streamlit_app.py"), run_name="__main__")
+    st.stop()
+# ---------------------------------------------------------------------------
+
+import math  # noqa: E402  (the desktop app starts here)
+import tkinter as tk  # noqa: E402
+from tkinter import messagebox  # noqa: E402
+
+import data  # noqa: E402
 import theme
 from background import Background
 from border import Border
